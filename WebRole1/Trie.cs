@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 
-namespace pa2retry
+namespace WebRole1
 {
     public class Trie
     {

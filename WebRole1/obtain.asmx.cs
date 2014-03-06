@@ -7,8 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Diagnostics;
 
-namespace pa2retry
+namespace WebRole1
 {
     /// <summary>
     /// Summary description for obtain
@@ -21,10 +22,12 @@ namespace pa2retry
     public class obtain : System.Web.Services.WebService
     {
 
+        public static Trie trie = new Trie();
+        public PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
+
         [WebMethod]
-        public static Trie GetStorage()
+        public void GetStorage()
         {
-            Trie trie = new Trie();
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 ConfigurationManager.AppSettings["StorageConnectionString"]);
 
@@ -39,10 +42,11 @@ namespace pa2retry
             {
                 while ((line = sr.ReadLine()) != null)
                 {
+                    if (this.ramCounter.NextValue() >= 4000000)
+                        break;
                     trie.insertWord(line);
                 }
             }
-            return trie;
         }
     }
 }
