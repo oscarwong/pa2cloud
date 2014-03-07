@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Diagnostics;
+using System.Web.Script.Services;
 
 namespace WebRole1
 {
@@ -18,7 +19,7 @@ namespace WebRole1
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [ScriptService]
     public class obtain : System.Web.Services.WebService
     {
 

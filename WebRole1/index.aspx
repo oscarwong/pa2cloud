@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <meta charset="utf-8">
     <title>Search request</title>
+    <script type="text/javascript">
+
+
+    </script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 </head>
 <body>
