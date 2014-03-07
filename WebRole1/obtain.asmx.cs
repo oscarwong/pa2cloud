@@ -42,7 +42,7 @@ namespace WebRole1
             {
                 while ((line = sr.ReadLine()) != null)
                 {
-                    if (this.ramCounter.NextValue() >= 4000000)
+                    if (this.ramCounter.NextValue() >= 400000)
                         break;
                     trie.insertWord(line);
                 }

@@ -25,7 +25,7 @@
     </Imports>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="c:\users\iguest\documents\visual studio 2013\Projects\pa2cloud\pa2cloud\rcf\Debug\WebRole1Content\" />
+        <SourceDirectory path="C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\pa2cloud\pa2cloud\rcf\Debug\WebRole1Content\" />
       </Content>
     </Contents>
   </WebRole>

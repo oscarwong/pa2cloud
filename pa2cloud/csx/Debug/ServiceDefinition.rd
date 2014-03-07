@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pa2cloud" generation="1" functional="0" release="0" Id="80a2d69f-0e7c-4d04-84d3-0af354bbc7c1" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pa2cloud" generation="1" functional="0" release="0" Id="5a49c053-70a0-470d-afa8-0e549ebee131" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="pa2cloudGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -42,7 +42,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="WebRole1" generation="1" functional="0" release="0" software="c:\users\iguest\documents\visual studio 2013\Projects\pa2cloud\pa2cloud\csx\Debug\roles\WebRole1" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="1792" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
+          <role name="WebRole1" generation="1" functional="0" release="0" software="C:\Users\oscarwong\Documents\Visual Studio 2012\Projects\pa2cloud\pa2cloud\csx\Debug\roles\WebRole1" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaIISHost.exe " memIndex="1792" hostingEnvironment="frontendadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Endpoint1" protocol="http" portRanges="80" />
             </componentports>
@@ -70,9 +70,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="621d21ca-216c-406a-a5db-e7ee37d50a05" ref="Microsoft.RedDog.Contract\ServiceContract\pa2cloudContract@ServiceDefinition">
+    <implementation Id="439710a1-6725-4b4a-a3e6-a8092b63b73a" ref="Microsoft.RedDog.Contract\ServiceContract\pa2cloudContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="b0e48746-2f8d-4ea9-8ba8-6f9bdbe38f01" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="7646426f-1825-4472-9c33-810608e8133f" ref="Microsoft.RedDog.Contract\Interface\WebRole1:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/pa2cloud/pa2cloudGroup/WebRole1:Endpoint1" />
           </inPort>
