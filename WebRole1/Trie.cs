@@ -77,6 +77,7 @@ namespace WebRole1
                     if (pair.Value.lastChar)
                         words.Add(sb.ToString());
                     getWords(pair.Value, sb, prefix, words);
+                    sb.Remove(sb.ToString().Length - 1, 1);
                 }
             }
             return words;

@@ -23,7 +23,6 @@ namespace WebRole1
     {
 
         public static Trie trie = new Trie();
-        public PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
 
         [WebMethod]
         public void GetStorage()
@@ -40,13 +39,23 @@ namespace WebRole1
             string line = null;
             using (StreamReader sr = new StreamReader(blob2.OpenRead()))
             {
-                while ((line = sr.ReadLine()) != null)
+                try
                 {
-                    if (this.ramCounter.NextValue() >= 400000)
-                        break;
-                    trie.insertWord(line);
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        trie.insertWord(line);
+                    }
+                }
+                catch (Exception e)
+                {
                 }
             }
+        }
+
+        [WebMethod]
+        public List<string> Read(string _userinput)
+        {
+            return trie.searchPrefix(_userinput);
         }
     }
 }

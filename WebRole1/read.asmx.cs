@@ -20,7 +20,7 @@ namespace WebRole1
         [WebMethod]
         public List<string> Read(string _userinput)
         {
-            return WebRole1.obtain.trie.searchPrefix(_userinput);
+            return WebRole1.test.trie.searchPrefix(_userinput);
         }
     }
 }
