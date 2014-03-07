@@ -48,6 +48,11 @@ namespace WebRole1
             TrieNode currentNode = root;
             List<string> words = new List<string>();
             currentNode = findRoot(prefix);
+            if (currentNode == null)
+            {
+                words.Add("No matching words.");
+                return words;
+            }   
             if (currentNode.lastChar)
                 words.Add(prefix);
             StringBuilder sb = new StringBuilder();
@@ -68,14 +73,18 @@ namespace WebRole1
                 else if (pair.Value.lastChar && pair.Value.edge.Count == 0)
                 {
                     sb.Append(pair.Key);
-                    words.Add(sb.ToString());
+                    if (words.Count < 10)
+                        words.Add(sb.ToString());
                     sb.Remove(sb.ToString().Length - 1, 1);
                 }
                 else
                 {
                     sb.Append(pair.Key);
                     if (pair.Value.lastChar)
-                        words.Add(sb.ToString());
+                    {
+                        if (words.Count < 10)
+                            words.Add(sb.ToString());
+                    }
                     getWords(pair.Value, sb, prefix, words);
                     sb.Remove(sb.ToString().Length - 1, 1);
                 }
