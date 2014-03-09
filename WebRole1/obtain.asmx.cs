@@ -60,7 +60,15 @@ namespace WebRole1
         {
             var json = new WebClient().DownloadString("http://ec2-54-186-72-122.us-west-2.compute.amazonaws.com/player.php?name=" + _userinput);
             _userinput = _userinput.ToLower();
-            return trie.searchPrefix(_userinput);
+            List<string> answer = new List<string>();
+            try
+            {
+                answer = trie.searchPrefix(_userinput);
+            }
+            catch (Exception e)
+            {
+            }
+            return answer;
         }
     }
 }
