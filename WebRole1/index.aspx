@@ -48,6 +48,13 @@
                 }
             });
         };
+
+        function autocomplete(data) {
+            var availableTags = data.d;
+            $("#tags").autocomplete({
+                source: availableTags
+            });
+        };
     </script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 </head>
@@ -73,6 +80,11 @@
         <div class="col-md-2 col-md-offset-5 container">
             <div id="result1"></div>
         </div>
+    </div>
+
+    <div class="ui-widget">
+        <label for="tags"></label>
+        <input id="tags">
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
