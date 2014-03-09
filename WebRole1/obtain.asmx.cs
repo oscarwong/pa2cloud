@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Services;
 using System.Diagnostics;
 using System.Web.Script.Services;
+using System.Net;
 
 namespace WebRole1
 {
@@ -54,8 +55,11 @@ namespace WebRole1
         }
 
         [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public List<string> Read(string _userinput)
         {
+            var json = new WebClient().DownloadString("http://ec2-54-186-72-122.us-west-2.compute.amazonaws.com/player.php?name=" + _userinput);
+            _userinput = _userinput.ToLower();
             return trie.searchPrefix(_userinput);
         }
     }
